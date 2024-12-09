@@ -13,6 +13,7 @@ app.use(express.json());
 app.use('/assets', assetRouter);
 
 
+
 app.get("/",(req,res) => {
     res.send("Server running")
 })
