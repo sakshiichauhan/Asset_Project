@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express';
 import { createAsset,getAllAssets, getAssetById, deleteAsset, updateAsset } from '../controller/assetController.js';
 
 const assetRouter = express.Router();

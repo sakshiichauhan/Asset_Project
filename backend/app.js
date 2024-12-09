@@ -1,14 +1,17 @@
 import express from 'express'
 import {connectDB} from './config/db.js'
-const PORT = process.env.PORT || 5050;
-import { assetRouter } from './routes/assetRoutes.js';
+import assetRouter from './routes/assetRoutes.js';
+
+const PORT = process.env.PORT || 6060;
+
 const app = express()
 // DB call
 connectDB();
 
 app.use(express.json());
 
-app.use('/api/asset', assetRouter)
+app.use('/assets', assetRouter);
+
 
 app.get("/",(req,res) => {
     res.send("Server running")

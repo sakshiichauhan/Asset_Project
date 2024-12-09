@@ -25,12 +25,12 @@ const assetSchema = new mongoose.Schema({
       },
       assignedToEmployee: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Employee',
+        ref: 'employee',
         default: null,
       },
       assignedToRoom: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Room',
+        ref: 'room',
         default: null,
       },
       assignedDate: {
@@ -43,6 +43,6 @@ const assetSchema = new mongoose.Schema({
       }
 }, {minimize : false})
 
-const assetModel =  mongoose.model.asset || mongoose.model("asset", assetSchema);
+export const assetModel =  mongoose.model.asset || mongoose.model("asset", assetSchema);
 
-export default assetModel;
+// export default assetModel;
