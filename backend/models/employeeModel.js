@@ -28,13 +28,12 @@ const employeeSchema = new mongoose.Schema({
     type: String, 
     required: true, 
     match: [/^\+?(\d.*){3,}$/, 'Please enter a valid phone number'] 
-  },
-  createdAt: { 
-    type: Date, 
-    default: Date.now 
-  },
+  }
+}, {
+  timestamps: true,  // This adds createdAt and updatedAt automatically
+  minimize: false
 });
  
 const employeeModel = mongoose.model.employeeModel || mongoose.model("employee", employeeSchema)
- 
+
 export default employeeModel;
