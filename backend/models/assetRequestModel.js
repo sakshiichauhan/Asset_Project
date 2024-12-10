@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const requestAssetSchema = new mongoose.Schema({
+const requestAssetSchema = new mongoose.Schema(
+    {
     employeeID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'employee',
@@ -52,15 +53,12 @@ const requestAssetSchema = new mongoose.Schema({
         enum: ['Pending', 'Approved', 'Rejected'],
         default: 'Pending',
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now,
-    },
-});
+},
+    {
+        timestamps: true, // Automatically adds createdAt and updatedAt fields
+      }
+    
+);
 
 const requestAssetModel = mongoose.model.requestAssetModel || mongoose.model("requestAssets", requestAssetSchema);
 
