@@ -38,21 +38,6 @@ const requestAssetSchema = new mongoose.Schema(
         type: Date,
         required: true,
     },
-    // Approval Workflow
-    managerApproval: {
-        type: String,
-        enum: ['Pending', 'Approved', 'Rejected'],
-        default: 'Pending',
-    },
-    managerComments: {
-        type: String,
-    },
-    // Status Tracking
-    requestStatus: {
-        type: String,
-        enum: ['Pending', 'Approved', 'Rejected'],
-        default: 'Pending',
-    },
 },
     {
         timestamps: true, // Automatically adds createdAt and updatedAt fields

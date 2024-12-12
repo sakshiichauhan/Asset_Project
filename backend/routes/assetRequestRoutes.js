@@ -1,7 +1,9 @@
 import express from "express";
-// import {} from "controler"
+import {createRequest} from "../controller/assetRequestController.js";
 
-const requestAssetRouter = express.Router()
+const requestAssetRouter = express.Router();
+
+requestAssetRouter.post("create-request", createRequest);
 
 
 
